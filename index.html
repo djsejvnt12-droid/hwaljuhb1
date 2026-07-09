@@ -40,21 +40,25 @@
 
         /* 신규 추가: 마법의 드래그 설치 박스 스타일 */
         .drag-install-box { background-color: #1e272e; border: 2px dashed #4A90E2; padding: 12px; border-radius: 8px; text-align: center; margin-bottom: 15px; }
-        .btn-drag-link { display: block; padding: 10px; background-color: #4A90E2; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); cursor: move; transition: background 0.2s; }
+        .btn-drag-link { display: block; padding: 10px; margin-bottom: 8px; background-color: #4A90E2; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); cursor: move; transition: background 0.2s; }
+        .btn-drag-link.secondary { background-color: #34A853; }
         .btn-drag-link:hover { background-color: #357ABD; }
+        .btn-drag-link.secondary:hover { background-color: #2e8b45; }
     </style>
 </head>
 <body>
 
 <div class="panel sidebar side-panel">
-    <!-- [신규 기능 추가] 북마크 드래그 설치 영역 -->
     <div class="drag-install-box">
         <p style="margin-top: 0; margin-bottom: 8px; font-size: 11px; color: #4A90E2; font-weight: bold; line-height: 1.4;">
-	📌닉네임 먼저 작성, <br>닉네임 수정시 새롭게 등록 !<br><br>
+    📌닉네임 먼저 작성, <br>닉네임 수정시 새롭게 등록 !<br><br>
             📌아래 버튼을 마우스로 잡고<br>상단 북마크바에 끌어다 놓으세요!
         </p>
         <a id="magicBookmarklet" href="#" class="btn-drag-link">
-            ⭐활주 원클릭 자동입력 등록⭐
+            ⭐활주 원클릭 입력⭐
+        </a>
+        <a id="copyBookmarklet" href="javascript:(function(){navigator.clipboard.writeText(window.location.href);alert('주소 복사 완료: ' + window.location.href);})();" class="btn-drag-link secondary">
+            ⭐주소 복사하기⭐
         </a>
     </div>
 
@@ -238,28 +242,24 @@ https://discord.gg/dCjtHz9X7
         const count = document.getElementById('logCount').value;
         const total = document.getElementById('logTotal').value;
         
-        // 중복 체크를 위한 객체 및 입력창 리셋
         const linkCounts = {};
         let linksText = "";
 
-        // 1차 순회: 입력된 모든 값의 빈도수 측정 및 스타일 기본값으로 리셋
         for (let i = 1; i <= 30; i++) {
             const input = document.getElementById('link_' + i);
             const val = input.value.trim();
-            input.style.backgroundColor = '#3d3d3d'; // 원래 배경색으로 초기화
+            input.style.backgroundColor = '#3d3d3d';
             
             if (val) {
                 linkCounts[val] = (linkCounts[val] || 0) + 1;
             }
         }
         
-        // 2차 순회: 중복된 값 검사 및 최종 텍스트 생성
         for (let i = 1; i <= 30; i++) {
             const input = document.getElementById('link_' + i);
             const val = input.value.trim();
             
             if(val) {
-                // 입력한 값이 전체 중에서 2개 이상 존재하면 빨간 반투명 처리
                 if (linkCounts[val] > 1) {
                     input.style.backgroundColor = 'rgba(255, 77, 77, 0.4)';
                 }
@@ -285,12 +285,10 @@ https://discord.gg/dCjtHz9X7
     const today = new Date();
     document.getElementById('logDate').value = (today.getMonth() + 1) + "/" + today.getDate();
     
-    // 🔥 [수정 피드백 반영] 에디터 가독성 및 줄바꿈 완벽 최적화 로직
     function generateBookmarklet() {
         const titleText = document.getElementById('postTitle').value;
         const contentText = document.getElementById('postContent').value;
         
-        // 줄바꿈 문자를 에디터가 인식할 수 있는 HTML <br> 태그와 문장 단위로 쪼개어 가공
         const htmlFormattedContent = contentText
             .replace(/\\/g, '\\\\')
             .replace(/`/g, '\\`')
@@ -310,7 +308,6 @@ https://discord.gg/dCjtHz9X7
         document.getElementById('magicBookmarklet').href = code;
     }
 
-    // 닉네임 변경되거나 초기 실행 시 북마크 주소도 실시간 업데이트 되도록 연동
     const originUpdateAll = updateAll;
     updateAll = function() {
         originUpdateAll();
