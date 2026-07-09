@@ -34,11 +34,9 @@
         .creator-label { font-size: 18px; font-weight: bold; color: #fff; margin-bottom: 15px; display: block; }
         .log-container { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 10px; }
         
-        /* 링크 입력창 스타일 */
         .link-grid-container { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; margin-top: 10px; border-top: 1px solid #555; padding-top: 10px; }
         .link-input-tight { width: 100%; padding: 2px; font-size: 10px; background: #3d3d3d; border: 1px solid #555; color: white; border-radius: 2px; height: 18px; box-sizing: border-box; text-align: center; transition: background-color 0.2s; }
 
-        /* 신규 추가: 마법의 드래그 설치 박스 스타일 */
         .drag-install-box { background-color: #1e272e; border: 2px dashed #4A90E2; padding: 12px; border-radius: 8px; text-align: center; margin-bottom: 15px; }
         .btn-drag-link { display: block; padding: 10px; margin-bottom: 8px; background-color: #4A90E2; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); cursor: move; transition: background 0.2s; }
         .btn-drag-link.secondary { background-color: #34A853; }
@@ -204,18 +202,18 @@ https://discord.gg/dCjtHz9X7
         <div class="guide-title">📢 홍보 시간대 안내</div>
         <p style="font-size:12px; color:#ddd;">해당 시간대에 홍보를 해야 합니다.</p>
         <p style="font-size:12px; color:#ffeb3b;">데일리: 00~24시 | 피크타임: 18~22시</p>
-        <p style="font-size:13px; font-weight:bold; color:#ff9999;">총 60회 참여 가능 (데일리+피크)</p>
+        <p style="font-size:13px; font-weight:bold; color:#ff9999;">총 120회 참여 가능 (데일리+피크)</p>
     </div>
     <div class="guide-box">
         <div class="guide-title">🎯 홍보 횟수 (데일리/피크 x2)</div>
         <table class="table-guide">
             <tr><th>사이트</th><th>최대</th><th>비고</th></tr>
             <tr><td>투데이프리</td><td class="highlight">10회</td><td>필수</td></tr>
-            <tr><td>투데이존</td><td class="highlight">5회</td><td>필수</td></tr>
-            <tr><td>프리투게더</td><td>5회</td><td>-</td></tr>
-            <tr><td>린투데이</td><td>5회</td><td>-</td></tr>
-            <tr><td>리니지갤러리</td><td>5회</td><td>-</td></tr>
-            <tr><td>헬게이트</td><td>5회</td><td>-</td></tr>
+            <tr><td>투데이존</td><td class="highlight">10회</td><td>필수</td></tr>
+            <tr><td>프리투게더</td><td>10회</td><td>-</td></tr>
+            <tr><td>린투데이</td><td>10회</td><td>-</td></tr>
+            <tr><td>리니지갤러리</td><td>10회</td><td>-</td></tr>
+            <tr><td>헬게이트</td><td>10회</td><td>-</td></tr>
         </table>
         <p style="font-size:11px; margin-top:10px; color:#bbb;">※ 데일리 기준으로 작성되었습니다. 피크타임까지 계산하면 x2 하면 됩니다.</p>
     </div>
@@ -225,7 +223,7 @@ https://discord.gg/dCjtHz9X7
     const originalText = document.getElementById('postContent').value;
     const linkGrid = document.getElementById('linkGrid');
     
-    for(let i=1; i<=30; i++) {
+    for(let i=1; i<=60; i++) {
         const input = document.createElement('input');
         input.type = 'text';
         input.className = 'link-input-tight';
@@ -247,7 +245,7 @@ https://discord.gg/dCjtHz9X7
         const linkCounts = {};
         let linksText = "";
 
-        for (let i = 1; i <= 30; i++) {
+        for (let i = 1; i <= 60; i++) {
             const input = document.getElementById('link_' + i);
             const val = input.value.trim();
             input.style.backgroundColor = '#3d3d3d';
@@ -257,7 +255,7 @@ https://discord.gg/dCjtHz9X7
             }
         }
         
-        for (let i = 1; i <= 30; i++) {
+        for (let i = 1; i <= 60; i++) {
             const input = document.getElementById('link_' + i);
             const val = input.value.trim();
             
