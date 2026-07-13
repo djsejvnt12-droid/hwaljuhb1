@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <title>활주 홍보도우미 - 비글 </title>
     <style>
-        body { margin: 0; padding: 20px; background-color: #2b2b2b; color: #fff; font-family: 'Malgun Gothic', sans-serif; display: flex; justify-content: center; }
+        body { 
+            margin: 0; padding: 20px; 
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/back2.png');
+            background-size: cover; background-position: center; background-attachment: fixed;
+            color: #fff; font-family: 'Malgun Gothic', sans-serif; display: flex; justify-content: center; 
+        }
         .panel { background: #333; border-radius: 10px; padding: 20px; height: fit-content; }
         .side-panel { width: 280px; }
         .sidebar { margin-right: 20px; }
@@ -42,6 +47,9 @@
         .btn-drag-link.secondary { background-color: #34A853; }
         .btn-drag-link:hover { background-color: #357ABD; }
         .btn-drag-link.secondary:hover { background-color: #2e8b45; }
+        
+        .btn-reset { width: 100%; padding: 8px; background: #ff4d4d; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; margin-top: 10px; font-size: 12px; }
+        .btn-reset:hover { background: #d32f2f; }
     </style>
 </head>
 <body>
@@ -52,12 +60,8 @@
     📌닉네임 먼저 작성, <br>닉네임 수정시 새롭게 등록 !<br><br>
             📌아래 버튼을 마우스로 잡고<br>상단 북마크바에 끌어다 놓으세요!
         </p>
-        <a id="magicBookmarklet" href="#" class="btn-drag-link">
-            ⭐활주 원클릭 입력⭐
-        </a>
-        <a id="copyBookmarklet" href="javascript:(function(){navigator.clipboard.writeText(window.location.href);alert('주소 복사 완료: ' + window.location.href);})();" class="btn-drag-link secondary">
-            ⭐주소 복사하기⭐
-        </a>
+        <a id="magicBookmarklet" href="#" class="btn-drag-link">⭐활주 원클릭 입력⭐</a>
+        <a id="copyBookmarklet" href="javascript:(function(){navigator.clipboard.writeText(window.location.href);alert('주소 복사 완료: ' + window.location.href);})();" class="btn-drag-link secondary">⭐주소 복사하기⭐</a>
     </div>
 
     <h3 style="margin-top:0;">🚀 홍보 사이트 & 팁</h3>
@@ -71,10 +75,10 @@
     <div class="site-row"><div class="site-name">투데이존</div><a href="https://todayzo.net/" target="_blank" class="btn-site">방문</a><a href="https://todayzo.net/etc/write" target="_blank" class="btn-site write">글쓰기</a></div>
     <div class="site-row"><div class="site-name">린투데이</div><a href="https://lintoday.me/" target="_blank" class="btn-site">방문</a><a href="https://lintoday.me/bbs/write.php?bo_table=22" target="_blank" class="btn-site write">글쓰기</a></div>
     <div class="site-row"><div class="site-name">리니지갤러리</div><a href="https://www.xn--p49ay9j3uee2bda708v.net/User/Home" target="_blank" class="btn-site">방문</a><a href="https://www.xn--p49ay9j3uee2bda708v.net/User/BJGuangBo_Information" target="_blank" class="btn-site write">글쓰기</a></div>
- <div class="site-row"><div class="site-name">헬게이트</div><a href="https://hellgate4.com/" target="_blank" class="btn-site">방문</a><a href="https://hellgate4.com/othergames/write" target="_blank" class="btn-site write">글쓰기</a></div>
- <div class="site-row"><div class="site-name">프리키키</div><a href="https://freekiki.com/" target="_blank" class="btn-site">방문</a><a href="https://freekiki.com/maplestory/write" target="_blank" class="btn-site write">글쓰기</a></div>
-     <div class="site-row"><div class="site-name">프리바다</div><a href="https://freebada.xyz/" target="_blank" class="btn-site">방문</a><a href="https://freebada.xyz/maplestory/write" target="_blank" class="btn-site write">글쓰기</a></div>
-<div class="site-row"><div class="site-name">코코버그</div><a href="https://cocobug.org/" target="_blank" class="btn-site">방문</a><a href="https://cocobug.org/other/write" target="_blank" class="btn-site write">글쓰기</a></div>
+    <div class="site-row"><div class="site-name">헬게이트</div><a href="https://hellgate4.com/" target="_blank" class="btn-site">방문</a><a href="https://hellgate4.com/othergames/write" target="_blank" class="btn-site write">글쓰기</a></div>
+    <div class="site-row"><div class="site-name">프리키키</div><a href="https://freekiki.com/" target="_blank" class="btn-site">방문</a><a href="https://freekiki.com/maplestory/write" target="_blank" class="btn-site write">글쓰기</a></div>
+    <div class="site-row"><div class="site-name">프리바다</div><a href="https://freebada.xyz/" target="_blank" class="btn-site">방문</a><a href="https://freebada.xyz/maplestory/write" target="_blank" class="btn-site write">글쓰기</a></div>
+    <div class="site-row"><div class="site-name">코코버그</div><a href="https://cocobug.org/" target="_blank" class="btn-site">방문</a><a href="https://cocobug.org/other/write" target="_blank" class="btn-site write">글쓰기</a></div>
 </div>
 
 <div class="main-container">
@@ -196,6 +200,7 @@ https://discord.gg/dCjtHz9X7
         </div>
         <div style="margin-top:15px; font-size:12px; font-weight:bold; color:#4A90E2;">아래 홍보링크 기입 하시면 자동으로 본문에 등록됩니다.</div>
         <div id="linkGrid" class="link-grid-container"></div>
+        <button class="btn-reset" onclick="resetLinks()">클릭시 링크 초기화</button>
     </div>
 </div>
 
@@ -229,7 +234,7 @@ https://discord.gg/dCjtHz9X7
     const originalText = document.getElementById('postContent').value;
     const linkGrid = document.getElementById('linkGrid');
     
-    for(let i=1; i<=60; i++) {
+    for(let i=1; i<=30; i++) {
         const input = document.createElement('input');
         input.type = 'text';
         input.className = 'link-input-tight';
@@ -237,6 +242,15 @@ https://discord.gg/dCjtHz9X7
         input.id = 'link_' + i;
         input.oninput = updateAll;
         linkGrid.appendChild(input);
+    }
+
+    function resetLinks() {
+        if (confirm("정말 링크를 모두 초기화 하시겠습니까?")) {
+            for (let i = 1; i <= 30; i++) {
+                document.getElementById('link_' + i).value = "";
+            }
+            updateAll();
+        }
     }
 
     function updateAll() {
@@ -251,7 +265,7 @@ https://discord.gg/dCjtHz9X7
         const linkCounts = {};
         let linksText = "";
 
-        for (let i = 1; i <= 60; i++) {
+        for (let i = 1; i <= 30; i++) {
             const input = document.getElementById('link_' + i);
             const val = input.value.trim();
             input.style.backgroundColor = '#3d3d3d';
@@ -261,7 +275,7 @@ https://discord.gg/dCjtHz9X7
             }
         }
         
-        for (let i = 1; i <= 60; i++) {
+        for (let i = 1; i <= 30; i++) {
             const input = document.getElementById('link_' + i);
             const val = input.value.trim();
             
