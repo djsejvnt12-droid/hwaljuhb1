@@ -2,53 +2,57 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>활주 홍보도우미 - 비글 </title>
+    <title>활주 홍보도우미 - 비글</title>
     <style>
         body { 
             margin: 0; padding: 20px; 
             background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://raw.githubusercontent.com/djsejvnt12-droid/hwaljuguide/main/images/back2.png');
             background-size: cover; background-position: center; background-attachment: fixed;
-            color: #fff; font-family: 'Malgun Gothic', sans-serif; display: flex; justify-content: center; 
+            color: #f3efe6; font-family: 'MapleStory', sans-serif; display: flex; justify-content: center; 
         }
-        .panel { background: #333; border-radius: 10px; padding: 20px; height: fit-content; }
+        .panel { background: rgba(18, 18, 22, 0.9); border-radius: 12px; padding: 20px; height: fit-content; border: 1px solid rgba(212, 180, 131, 0.25); backdrop-filter: blur(12px); box-shadow: 0 10px 30px rgba(0,0,0,0.6); }
         .side-panel { width: 280px; }
         .sidebar { margin-right: 20px; }
         .guidebar { margin-left: 20px; }
         .main-container { width: 500px; }
         
         .section { margin-bottom: 20px; }
-        label { display: block; margin-bottom: 8px; font-weight: bold; }
-        .input-text { width: 100%; padding: 12px; border: 1px solid #555; background: #3d3d3d; color: white; border-radius: 5px; box-sizing: border-box; }
-        .btn-copy { width: 100%; padding: 12px; background: #4A90E2; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; margin-top: 5px; transition: background 0.3s; }
-        .btn-copy.success { background: #34A853; }
+        label { display: block; margin-bottom: 8px; font-weight: bold; color: #d4b483; text-shadow: 0 0 6px rgba(212,180,131,0.3); }
+        .input-text { width: 100%; padding: 12px; border: 1px solid rgba(212, 180, 131, 0.4); background: rgba(35, 33, 30, 0.85); color: #fff; border-radius: 8px; box-sizing: border-box; font-family: 'MapleStory', sans-serif; }
+        .input-text:focus { border-color: #f1e0ac; outline: none; }
+        .btn-copy { width: 100%; padding: 12px; background: linear-gradient(135deg, rgba(35, 33, 30, 0.85), rgba(20, 19, 17, 0.95)); border: 1px solid rgba(212, 180, 131, 0.4); color: #fff; border-radius: 8px; cursor: pointer; font-weight: bold; margin-top: 5px; transition: all 0.3s ease; font-family: 'MapleStory', sans-serif; box-shadow: 0 4px 15px rgba(0,0,0,0.3); }
+        .btn-copy:hover { border-color: #f1e0ac; background: linear-gradient(135deg, rgba(50, 45, 40, 0.9), rgba(30, 27, 24, 0.95)); transform: translateY(-2px); }
+        .btn-copy.success { background: #34A853 !important; border-color: #34A853 !important; }
         
         .site-row { display: flex; align-items: center; gap: 5px; margin-bottom: 10px; }
-        .site-name { width: 90px; font-size: 12px; font-weight: bold; color: #ddd; }
-        .btn-site { flex: 1; padding: 6px 0; text-align: center; background: #555; color: white; text-decoration: none; border-radius: 4px; font-size: 11px; font-weight: bold; }
-        .btn-site.write { background: #E67E22; }
+        .site-name { width: 90px; font-size: 12px; font-weight: bold; color: #f3efe6; }
+        .btn-site { flex: 1; padding: 6px 0; text-align: center; background: rgba(35, 33, 30, 0.85); border: 1px solid rgba(212, 180, 131, 0.3); color: #fff; text-decoration: none; border-radius: 6px; font-size: 11px; font-weight: bold; transition: all 0.2s ease; }
+        .btn-site:hover { border-color: #d4b483; background: rgba(50, 45, 40, 0.9); }
+        .btn-site.write { background: rgba(230, 126, 34, 0.3); border-color: #E67E22; }
+        .btn-site.write:hover { background: rgba(230, 126, 34, 0.5); }
         
-        .tip-box { margin-bottom: 15px; padding: 12px; background: #444; border-left: 4px solid #E67E22; border-radius: 4px; font-size: 12px; color: #ffeb3b; font-weight: bold; }
-        .tip-box-red { padding: 12px; background: #3b2a2a; border: 2px solid #ff4d4d; border-radius: 4px; font-size: 12px; color: #ff9999; font-weight: 800; text-align: center; margin-bottom: 15px; }
+        .tip-box { margin-bottom: 15px; padding: 12px; background: rgba(35, 33, 30, 0.85); border-left: 4px solid #E67E22; border-radius: 6px; font-size: 12px; color: #ffeb3b; font-weight: bold; border-top: 1px solid rgba(212, 180, 131, 0.2); border-right: 1px solid rgba(212, 180, 131, 0.2); border-bottom: 1px solid rgba(212, 180, 131, 0.2); }
+        .tip-box-red { padding: 12px; background: rgba(59, 42, 42, 0.85); border: 2px solid #ff4d4d; border-radius: 6px; font-size: 12px; color: #ff9999; font-weight: 800; text-align: center; margin-bottom: 15px; }
         
-        .guide-box { margin-bottom: 20px; padding: 15px; background: #2d3436; border: 1px solid #636e72; border-radius: 8px; }
-        .guide-title { color: #00cec9; font-size: 15px; font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #636e72; padding-bottom: 5px; }
+        .guide-box { margin-bottom: 20px; padding: 15px; background: rgba(35, 33, 30, 0.85); border: 1px solid rgba(212, 180, 131, 0.3); border-radius: 8px; }
+        .guide-title { color: #00cec9; font-size: 15px; font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid rgba(212, 180, 131, 0.2); padding-bottom: 5px; }
         .table-guide { width: 100%; font-size: 12px; border-collapse: collapse; margin-top: 10px; }
-        .table-guide th, .table-guide td { border: 1px solid #555; padding: 6px; text-align: center; }
+        .table-guide th, .table-guide td { border: 1px solid rgba(212, 180, 131, 0.25); padding: 6px; text-align: center; color: #f3efe6; }
         .highlight { color: #ffeaa7; font-weight: bold; }
         
-        .creator-label { font-size: 18px; font-weight: bold; color: #fff; margin-bottom: 15px; display: block; }
+        .creator-label { font-size: 18px; font-weight: bold; color: #fff; margin-bottom: 15px; display: block; text-shadow: 0 0 10px rgba(212,180,131,0.4); }
         .log-container { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 10px; }
         
-        .link-grid-container { display: grid; grid-template-columns: repeat(5, 1fr); gap: 2px; margin-top: 10px; border-top: 1px solid #555; padding-top: 10px; }
-        .link-input-tight { width: 100%; padding: 2px; font-size: 10px; background: #3d3d3d; border: 1px solid #555; color: white; border-radius: 2px; height: 18px; box-sizing: border-box; text-align: center; transition: background-color 0.2s; }
+        .link-grid-container { display: grid; grid-template-columns: repeat(5, 1fr); gap: 4px; margin-top: 10px; border-top: 1px solid rgba(212, 180, 131, 0.3); padding-top: 10px; }
+        .link-input-tight { width: 100%; padding: 2px; font-size: 10px; background: rgba(35, 33, 30, 0.85); border: 1px solid rgba(212, 180, 131, 0.4); color: white; border-radius: 4px; height: 22px; box-sizing: border-box; text-align: center; font-family: 'MapleStory', sans-serif; transition: background-color 0.2s; }
 
-        .drag-install-box { background-color: #1e272e; border: 2px dashed #4A90E2; padding: 12px; border-radius: 8px; text-align: center; margin-bottom: 15px; }
+        .drag-install-box { background-color: rgba(30, 39, 46, 0.85); border: 2px dashed #4A90E2; padding: 12px; border-radius: 8px; text-align: center; margin-bottom: 15px; }
         .btn-drag-link { display: block; padding: 10px; margin-bottom: 8px; background-color: #4A90E2; color: white; text-decoration: none; border-radius: 6px; font-weight: bold; font-size: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); cursor: move; transition: background 0.2s; }
         .btn-drag-link.secondary { background-color: #34A853; }
         .btn-drag-link:hover { background-color: #357ABD; }
         .btn-drag-link.secondary:hover { background-color: #2e8b45; }
         
-        .btn-reset { width: 100%; padding: 8px; background: #ff4d4d; color: white; border: none; border-radius: 5px; cursor: pointer; font-weight: bold; margin-top: 10px; font-size: 12px; }
+        .btn-reset { width: 100%; padding: 8px; background: rgba(255, 77, 77, 0.85); color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; margin-top: 10px; font-size: 12px; font-family: 'MapleStory', sans-serif; transition: background 0.2s; }
         .btn-reset:hover { background: #d32f2f; }
     </style>
 </head>
@@ -64,7 +68,7 @@
         <a id="copyBookmarklet" href="javascript:(function(){navigator.clipboard.writeText(window.location.href);alert('주소 복사 완료: ' + window.location.href);})();" class="btn-drag-link secondary">⭐주소 복사하기⭐</a>
     </div>
 
-    <h3 style="margin-top:0;">🚀 홍보 사이트 & 팁</h3>
+    <h3 style="margin-top:0; color: #d4b483;">🚀 홍보 사이트 & 팁</h3>
     <div class="tip-box"><strong>💡 투데이프리, 프리투게더,헬게이트,<br>프리바다,코코버그,프리나라</strong><br>게시글 작성 후 로그아웃 -> 로그인 반복</div>
     <div class="tip-box"><strong>💡 투데이존,프리키키</strong><br>[제목+내용 입력] 후 Ctrl+글작성<br>이후 F5 새로고침 -> 반복</div>
     <div class="tip-box"><strong>💡 린투데이, 리니지갤러리</strong><br>[제목+내용 입력] 후 Ctrl+글작성 클릭</div>
@@ -82,7 +86,7 @@
     <div class="site-row"><div class="site-name">프리나라</div><a href="https://freenara.net/" target="_blank" class="btn-site">방문</a><a href="https://freenara.net/bbs/write.php?bo_table=etc" target="_blank" class="btn-site write">글쓰기</a></div>
 </div>
 
-<div class="main-container">
+<div class="main-container panel" style="width: 500px; height: auto;">
     <div class="creator-label">제작자 : 비글</div>
     <div class="section">
         <label>👤 내 닉네임</label>
@@ -243,8 +247,8 @@ https://hwalju.com
         <button id="btnContent" class="btn-copy" onclick="copyText('postContent', 'btnContent')">본문 복사하기</button>
     </div>
 
-    <div class="panel" style="padding: 15px; border: 1px solid #4A90E2;">
-        <h4 style="margin:0 0 10px 0; color: #4A90E2;">📋 홍보인증</h4>
+    <div class="panel" style="padding: 15px; border: 1px solid rgba(212, 180, 131, 0.4); background: rgba(25, 23, 20, 0.85);">
+        <h4 style="margin:0 0 10px 0; color: #d4b483;">📋 홍보인증</h4>
         <div class="log-container">
             <div style="display: flex; flex-direction: column; gap: 5px;">
                 <input type="text" id="logDate" class="input-text" placeholder="날짜" oninput="updateAll()">
@@ -264,14 +268,14 @@ https://hwalju.com
                 </div>
             </div>
         </div>
-        <div style="margin-top:15px; font-size:12px; font-weight:bold; color:#4A90E2;">아래 홍보링크 기입 하시면 자동으로 본문에 등록됩니다.</div>
+        <div style="margin-top:15px; font-size:12px; font-weight:bold; color:#d4b483;">아래 홍보링크 기입 하시면 자동으로 본문에 등록됩니다.</div>
         <div id="linkGrid" class="link-grid-container"></div>
         <button class="btn-reset" onclick="resetLinks()">클릭시 링크 초기화</button>
     </div>
 </div>
 
 <div class="panel guidebar side-panel">
-    <h3 style="margin-top:0;">📊 홍보 가이드</h3>
+    <h3 style="margin-top:0; color: #d4b483;">📊 홍보 가이드</h3>
     <div class="guide-box">
         <div class="guide-title">📢 홍보 시간대 안내</div>
         <p style="font-size:12px; color:#ddd;">해당 시간대에 홍보를 해야 합니다.</p>
@@ -335,7 +339,7 @@ https://hwalju.com
         for (let i = 1; i <= 30; i++) {
             const input = document.getElementById('link_' + i);
             const val = input.value.trim();
-            input.style.backgroundColor = '#3d3d3d';
+            input.style.backgroundColor = 'rgba(35, 33, 30, 0.85)';
             
             if (val) {
                 linkCounts[val] = (linkCounts[val] || 0) + 1;
