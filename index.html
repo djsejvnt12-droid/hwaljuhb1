@@ -305,7 +305,7 @@ https://hwalju.com
     const originalText = document.getElementById('postContent').value;
     const linkGrid = document.getElementById('linkGrid');
     
-    for(let i=1; i<=30; i++) {
+    for(let i=1; i<=100; i++) {
         const input = document.createElement('input');
         input.type = 'text';
         input.className = 'link-input-tight';
@@ -336,7 +336,7 @@ https://hwalju.com
         const linkCounts = {};
         let linksText = "";
 
-        for (let i = 1; i <= 30; i++) {
+        for (let i = 1; i <= 60; i++) {
             const input = document.getElementById('link_' + i);
             const val = input.value.trim();
             input.style.backgroundColor = 'rgba(35, 33, 30, 0.85)';
@@ -346,7 +346,7 @@ https://hwalju.com
             }
         }
         
-        for (let i = 1; i <= 30; i++) {
+        for (let i = 1; i <= 60; i++) {
             const input = document.getElementById('link_' + i);
             const val = input.value.trim();
             
