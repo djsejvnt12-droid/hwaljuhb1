@@ -305,7 +305,7 @@ https://hwalju.com
     const originalText = document.getElementById('postContent').value;
     const linkGrid = document.getElementById('linkGrid');
     
-    for(let i=1; i<=100; i++) {
+    for(let i=1; i<=60; i++) {
         const input = document.createElement('input');
         input.type = 'text';
         input.className = 'link-input-tight';
@@ -317,7 +317,7 @@ https://hwalju.com
 
     function resetLinks() {
         if (confirm("정말 링크를 모두 초기화 하시겠습니까?")) {
-            for (let i = 1; i <= 30; i++) {
+            for (let i = 1; i <= 60; i++) {
                 document.getElementById('link_' + i).value = "";
             }
             updateAll();
